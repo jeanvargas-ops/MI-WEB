@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio de Boxeo - Ring & Knockout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #d90429;
+        }
+
+        header h1 {
+            color: #d90429;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d90429;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1000') center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #d90429;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #ef233c;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h3.titulo-seccion {
+            text-align: center;
+            color: #d90429;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .contenedor-tarjetas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+        }
+
+        .tarjeta h4 {
+            color: #ef233c;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        form {
+            background-color: #1f1f1f;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        form button {
+            background-color: #d90429;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #ef233c;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888888;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🥊 Knockout Gym</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#clases">Clases</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div id="inicio" class="hero">
+        <h2>Aprende el Arte del Boxeo</h2>
+        <p>Disciplina, técnica y acondicionamiento físico para todos los niveles.</p>
+        <a href="#contacto" class="btn">¡Inscríbete Hoy!</a>
+    </div>
+
+    <section id="clases">
+        <h3 class="titulo-seccion">Nuestros Programas</h3>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h4>Principiantes</h4>
+                <p>Aprende la postura correcta, desplazamiento, vendaje básico y los golpes fundamentales (jab, directo, croché).</p>
+            </div>
+            <div class="tarjeta">
+                <h4>Intermedio</h4>
+                <p>Enfoque en combinaciones, trabajo de manoplas, defensa, esquivas y trabajo intensivo en saco pesado.</p>
+            </div>
+            <div class="tarjeta">
+                <h4>Acondicionamiento</h4>
+                <p>Rutina intensa de resistencia cardio, salto de cuerda, calistenia y fortalecimiento abdominal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contacto e Inscripciones</h3>
+        <form action="#" method="POST">
+            <div>
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div>
+                <label for="mensaje">Mensaje o consulta:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué horario te gustaría entrenar?"></textarea>
+            </div>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Escuela de Boxeo Knockout Gym.</p>
+    </footer>
+
+</body>
+</html>
