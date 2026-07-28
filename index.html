@@ -40,15 +40,34 @@
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
+            <h2>Contacto e Inscripciones</h2>
             <form action="#" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
 
-                <label for="email">Correo:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="grupo-campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
 
-                <button type="submit">Enviar</button>
+                <div class="grupo-campo">
+                    <label for="turno">Turno de preferencia:</label>
+                    <select id="turno" name="turno" required>
+                        <option value="">-- Selecciona un turno --</option>
+                        <option value="manana">Mañana</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noche">Noche</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="mensaje">Mensaje o consulta:</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Tienes alguna duda sobre los entrenamientos?" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Solicitud</button>
             </form>
         </section>
 
