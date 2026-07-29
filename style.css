@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;       
@@ -120,6 +126,7 @@ form {
 
 form input, form select, form textarea {
     width: 100%;
+    max-width: 100%;
     padding: 10px;
     border: 1px solid #cbd5e1;
     border-radius: 5px;
@@ -155,4 +162,25 @@ form button {
 
 form button:hover {
     background-color: #b8001f;   
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 12px 15px;
+    }
+
+    form button {
+        width: 100%;
+        text-align: center;
+    }
 }
