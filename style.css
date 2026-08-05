@@ -245,6 +245,30 @@ form button:hover {
     background-color: #b8001f;   
 }
 
+.aviso {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.aviso.error {
+    display: block;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
+
+.aviso.exito {
+    display: block;
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #86efac;
+}
+
+
 @media (max-width: 600px) {
 
     body {
