@@ -1,38 +1,44 @@
 const btnTema = document.getElementById("btn-tema");
 
 btnTema.addEventListener("click", function() {
-
     document.body.classList.toggle("oscuro");
-
 });
-
 
 const btnMenu = document.getElementById("btn-menu");
 const navUl = document.querySelector("nav ul");
 
-
 btnMenu.addEventListener("click", function() {
-
     navUl.classList.toggle("abierto");
-    
 });
 
-const formPedido = document.getElementById("form-pedido");
-const errorPedido = document.getElementById("error-pedido");
+const formularioContacto = document.querySelector("#form-contacto");
+const avisoContacto = document.querySelector("#aviso-contacto");
 
-formPedido.addEventListener("submit", function(e) {
-    e.preventDefault(); // Evita que la página se recargue
-    
-    const nombre = document.getElementById("nombre").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const turno = document.getElementById("turno").value;
+function revisarFormulario(event) {
+    event.preventDefault();
 
-    if (nombre === "" || correo === "" || turno === "") {
-        errorPedido.textContent = "Por favor, completa todos los campos obligatorios.";
-        errorPedido.className = "aviso error";
+    const nombre = document.querySelector("#nombre").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const turno = document.querySelector("#turno").value;
+
+    if (nombre === "") {
+        avisoContacto.textContent = "Falta tu nombre, campeón.";
+        avisoContacto.classList.add("error");
+        avisoContacto.classList.remove("exito");
+    } else if (email.includes("@") === false) {
+        avisoContacto.textContent = "Ese correo no parece correo: le falta el @.";
+        avisoContacto.classList.add("error");
+        avisoContacto.classList.remove("exito");
+    } else if (turno === "") {
+        avisoContacto.textContent = "Por favor selecciona un turno de preferencia.";
+        avisoContacto.classList.add("error");
+        avisoContacto.classList.remove("exito");
     } else {
-        errorPedido.textContent = "¡Solicitud enviada con éxito! Te contactaremos pronto.";
-        errorPedido.className = "aviso exito";
-        formPedido.reset();
+        avisoContacto.textContent = "Inscripción recibida. Te contactamos hoy.";
+        avisoContacto.classList.add("exito");
+        avisoContacto.classList.remove("error");
+        formularioContacto.reset();
     }
-});
+}
+
+formularioContacto.addEventListener("submit", revisarFormulario);

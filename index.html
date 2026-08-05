@@ -18,7 +18,6 @@
     </header>
 
     <nav> 
-
         <button id="btn-menu" aria-label="Abrir menú">☰</button>
 
         <ul>
@@ -47,30 +46,38 @@
             </article>
         </section>
 
-        <section id="contacto" class="tarjeta">
+        <section id="contacto">
             <h2>Contacto e Inscripciones</h2>
 
-            <form id="form-pedido" novalidate>
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
+            <form id="form-contacto" novalidate>
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
 
-                <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" placeholder="tunombre@correo.com" required>
+                <div class="grupo-campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
 
-                <label for="turno">Turno de preferencia</label>
-                <select id="turno" name="turno" required>
-                    <option value="">-- Selecciona un turno --</option>
-                    <option value="manana">Mañana</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noche">Noche</option>
-                </select>
+                <div class="grupo-campo">
+                    <label for="turno">Turno de preferencia:</label>
+                    <select id="turno" name="turno" required>
+                        <option value="">-- Selecciona un turno --</option>
+                        <option value="manana">Mañana</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noche">Noche</option>
+                    </select>
+                </div>
 
-                <label for="pedido">Mensaje o consulta</label>
-                <textarea id="pedido" name="pedido" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+                <div class="grupo-campo">
+                    <label for="mensaje">Mensaje o consulta:</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Tienes alguna duda sobre los entrenamientos?" required></textarea>
+                </div>
 
                 <button type="submit">Enviar Solicitud</button>
 
-                <p id="error-pedido" class="aviso"></p>
+                <p id="aviso-contacto" class="aviso"></p>
             </form>
         </section>
 
