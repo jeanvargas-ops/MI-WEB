@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escuela de Boxeo</title>
+    <title>Escuela de Boxeo Knockout</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
@@ -13,16 +13,15 @@
             <h1>🥊 Escuela de Boxeo Knockout</h1>
             <p>Aprende técnica, disciplina y rendimiento.</p>
         </div>
-
         <button id="btn-tema" aria-label="Cambiar tema">🌙 Modo Oscuro</button>
     </header>
 
     <nav> 
         <button id="btn-menu" aria-label="Abrir menú">☰</button>
-
         <ul>
             <li><a href="#horarios">Horarios</a></li>
             <li><a href="#clases">Clases</a></li>
+            <li><a href="#productos">Tienda</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -46,11 +45,54 @@
             </article>
         </section>
 
+        <section id="productos">
+            <h2>Tienda del Gimnasio</h2>
+            <p>Equípate con lo mejor para tus entrenamientos. Pregunta por stock en recepción.</p>
+            
+            <div class="grid-productos">
+                <article class="producto">
+                    <span class="icono-producto">🥊</span>
+                    <h3>Guantes Pro</h3>
+                    <p>Cuero sintético, 14oz y 16oz.</p>
+                    <p class="precio">Bs. 250</p>
+                </article>
+
+                <article class="producto">
+                    <span class="icono-producto">🩹</span>
+                    <h3>Vendas de Boxeo</h3>
+                    <p>Semi-elásticas, 4.5 metros.</p>
+                    <p class="precio">Bs. 35</p>
+                </article>
+
+                <article class="producto">
+                    <span class="icono-producto">😬</span>
+                    <h3>Protector Bucal</h3>
+                    <p>Gel moldeable con estuche.</p>
+                    <p class="precio">Bs. 50</p>
+                </article>
+
+                <article class="producto">
+                    <span class="icono-producto">🎒</span>
+                    <h3>Saco de Boxeo</h3>
+                    <p>1.20m, relleno de alta densidad.</p>
+                    <p class="precio">Bs. 450</p>
+                </article>
+
+                <article class="producto">
+                    <span class="icono-producto">💧</span>
+                    <h3>Pera de Velocidad</h3>
+                    <p>Cuero genuino, incluye gancho.</p>
+                    <p class="precio">Bs. 180</p>
+                </article>
+            </div>
+        </section>
+
         <section id="contacto">
             <h2>Contacto e Inscripciones</h2>
 
             <form id="form-contacto" action="/procesar" method="POST" novalidate>
                 @csrf
+
                 <div class="grupo-campo">
                     <label for="nombre">Nombre completo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>

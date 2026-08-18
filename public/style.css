@@ -232,7 +232,7 @@ form button:hover {
     background-color: #b8001f;   
 }
 
-/* PASO 2: CSS PARA LOS AVISOS */
+/* AVISOS DEL FORMULARIO */
 .aviso {
     display: none;
     margin-top: 14px;
@@ -254,6 +254,67 @@ form button:hover {
     color: #1a7f4f;
     background-color: #e6f4ea;
     border: 1px solid #b7e1cd;
+}
+
+/* SECCIÓN DE PRODUCTOS (TIENDA) */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.producto {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#productos article.producto {
+    border-left: 1px solid #e2e8f0; 
+}
+
+.icono-producto {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    color: #1e293b;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.producto p {
+    font-size: 13px;
+}
+
+.producto .precio {
+    color: #d90429;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+body.oscuro .producto {
+    background-color: #0f172a;
+    border-color: #334155;
+}
+
+body.oscuro #productos article.producto {
+    border-left: 1px solid #334155; 
+}
+
+body.oscuro .producto h3 {
+    color: #e2e8f0;
+}
+
+body.oscuro .producto .precio {
+    color: #f87171;
 }
 
 @media (max-width: 600px) {
