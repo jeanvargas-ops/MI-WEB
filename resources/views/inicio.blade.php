@@ -46,45 +46,30 @@
         </section>
 
         <section id="productos">
-            <h2>Tienda del Gimnasio</h2>
-            <p>Equípate con lo mejor para tus entrenamientos. Pregunta por stock en recepción.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>Tienda del Gimnasio</h2>
+
+    <div>
+        @auth
+            <!-- Si está logueado como admin -->
+            <a href="/productos/nuevo" style="background-color: #2563eb; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">
+                + Agregar Producto
+            </a>
             
-            <div class="grid-productos">
-                <article class="producto">
-                    <span class="icono-producto">🥊</span>
-                    <h3>Guantes Pro</h3>
-                    <p>Cuero sintético, 14oz y 16oz.</p>
-                    <p class="precio">Bs. 250</p>
-                </article>
-
-                <article class="producto">
-                    <span class="icono-producto">🩹</span>
-                    <h3>Vendas de Boxeo</h3>
-                    <p>Semi-elásticas, 4.5 metros.</p>
-                    <p class="precio">Bs. 35</p>
-                </article>
-
-                <article class="producto">
-                    <span class="icono-producto">😬</span>
-                    <h3>Protector Bucal</h3>
-                    <p>Gel moldeable con estuche.</p>
-                    <p class="precio">Bs. 50</p>
-                </article>
-
-                <article class="producto">
-                    <span class="icono-producto">🎒</span>
-                    <h3>Saco de Boxeo</h3>
-                    <p>1.20m, relleno de alta densidad.</p>
-                    <p class="precio">Bs. 450</p>
-                </article>
-
-                <article class="producto">
-                    <span class="icono-producto">💧</span>
-                    <h3>Pera de Velocidad</h3>
-                    <p>Cuero genuino, incluye gancho.</p>
-                    <p class="precio">Bs. 180</p>
-                </article>
-            </div>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" style="background-color: #ef4444; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;">
+                    Cerrar Sesión
+                </button>
+            </form>
+        @else
+            <!-- Si es un visitante sin sesión -->
+            <a href="/login" style="background-color: #10b981; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                Iniciar Sesión (Admin)
+            </a>
+        @endauth
+    </div>
+</div>
         </section>
 
         <section id="contacto">
